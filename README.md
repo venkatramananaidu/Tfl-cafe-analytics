@@ -13,13 +13,48 @@ Built with:
 
 ## 📦 Features
 
-- Combine real-time footfall data from TfL with café sales
+- Combine real-time footfall data from TfL with café sales(synthetic data generated from ChatGPT)
 - Correlate station traffic with revenue trends
 - Forecast busy periods or dips in customer flow
-- Interact with your data using natural language
-- Live visualizations and filters
+- Interact with your data using natural language(in progress, tried with ollama)
+- Live visualizations and filters(in progress)
 
 ---
 
-## 📁 Project Structure
+## 📊 Project Overview
+
+This project explores how different factors such as station footfall, weather conditions, and events influence the sales performance of cafés across TFL stations. It includes:
+
+- 📈 Exploratory Data Analysis (EDA)
+- 🧮 Correlation Heatmaps
+- 📅 Interactive filtering by date and café
+- 🎯 Built with Streamlit for interactive visualization
+
+---
+
+## 📂 Project Structure
+│   cafe_analysis.ipynb
+│   LICENSE
+│   README.md
+│   requirements.txt
+│   streamlit_app.py
+│
+├───.ipynb_checkpoints
+│       cafe_analysis-checkpoint.ipynb
+│       requirements-checkpoint.txt
+│       streamlit_app-checkpoint.py
+│
+└───data
+        cafe_sales_data.csv
+        external_data.csv
+        footfall_data.csv
+
+**🛠️ Tools & Libraries**
+Python
+
+Pandas
+
+Streamlit
+
+Matplotlib / Seaborn
 
