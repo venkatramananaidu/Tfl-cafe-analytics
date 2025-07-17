@@ -6,6 +6,22 @@ import seaborn as sns
 # Set wide layout
 st.set_page_config(layout="wide", page_title="TFL Café Analytics")
 
+#background
+
+# Add a background image using custom CSS
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f0f0f0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
 # Load data
 @st.cache_data
 def load_data():
@@ -74,31 +90,20 @@ ax.set_title("Correlation Between Metrics", fontsize=14)
 plt.tight_layout()
 st.pyplot(fig)  # Pass the figure object directly to Streamlit
 
-from pandasai import PandasAI
-from pandasai.llm.openai import OpenAI
 import streamlit as st
-import pandas as pd
 
-# Initialize your LLM with your API key
-llm = OpenAI(api_token="YOUR_OPENAI_API_KEY")
-pandas_ai = PandasAI(llm)
+# --- Chat with Data Section ---
+st.markdown("---")
+st.subheader("💬 Chat with your sales Data")
 
-# Load your dataframe 
-df = filtered_df.copy()
+# Search widget
+user_query = st.text_input("Ask a question about the data:")
 
-st.title("Chat with Data (PandasAI)")
-
-# User input question
-query = st.text_input("Ask a question about the data:")
-
-if query:
-    try:
-        response = pandas_ai.run(df, query)
-        st.write("**Answer:**", response)
-    except Exception as e:
-        st.error(f"Error: {e}")
-
-
+# Placeholder response (you can connect this to real logic later)
+if user_query:
+    st.info(f"🔍 You asked: **{user_query}**")
+    st.warning("⚠️ This is a placeholder response. Real data insights coming soon!")
+d
 # Footer
 st.markdown("---")
 st.markdown("Built with ❤️ using Streamlit | Data: Synthetic + TFL"
